@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{2f5a700b-b1c2-4d6e-b855-eef24b19176c}</ProjectGuid>
+    <RootNamespace>TerraVulkan</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Library\include;C:\VulkanSDK\Include</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Library\include;C:\VulkanSDK\Include</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Library\include;C:\VulkanSDK\Include</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);Library\include;C:\VulkanSDK\Include</ExternalIncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>TerraVulkan\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>.\Library\lib;C:\VulkanSDK\Lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3d.lib;%(AdditionalDependencies);opengl32.lib;dxcompiler.lib;dxcompilerd.lib;GenericCodeGen.lib;GenericCodeGend.lib;glslang-default-resource-limits.lib;glslang-default-resource-limitsd.lib;glslang.lib;glslangd.lib;MachineIndependent.lib;MachineIndependentd.lib;OSDependent.lib;OSDependentd.lib;SDL2-static.lib;SDL2-staticd.lib;SDL2.lib;SDL2d.lib;SDL2main.lib;SDL2maind.lib;SDL2_test.lib;SDL2_testd.lib;shaderc.lib;shadercd.lib;shaderc_combined.lib;shaderc_combinedd.lib;shaderc_shared.lib;shaderc_sharedd.lib;shaderc_util.lib;shaderc_utild.lib;spirv-cross-c-shared.lib;spirv-cross-c-sharedd.lib;spirv-cross-c.lib;spirv-cross-cd.lib;spirv-cross-core.lib;spirv-cross-cored.lib;spirv-cross-cpp.lib;spirv-cross-cppd.lib;spirv-cross-glsl.lib;spirv-cross-glsld.lib;spirv-cross-hlsl.lib;spirv-cross-hlsld.lib;spirv-cross-msl.lib;spirv-cross-msld.lib;spirv-cross-reflect.lib;spirv-cross-reflectd.lib;spirv-cross-util.lib;spirv-cross-utild.lib;SPIRV-Tools-diff.lib;SPIRV-Tools-diffd.lib;SPIRV-Tools-link.lib;SPIRV-Tools-linkd.lib;SPIRV-Tools-lint.lib;SPIRV-Tools-lintd.lib;SPIRV-Tools-opt.lib;SPIRV-Tools-optd.lib;SPIRV-Tools-reduce.lib;SPIRV-Tools-reduced.lib;SPIRV-Tools-shared.lib;SPIRV-Tools-sharedd.lib;SPIRV-Tools.lib;SPIRV-Toolsd.lib;SPIRV.lib;SPIRVd.lib;SPVRemapper.lib;SPVRemapperd.lib;vulkan-1.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>TerraVulkan\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>.\Library\lib;C:\VulkanSDK\Lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);glfw3.lib;opengl32.lib;dxcompiler.lib;dxcompilerd.lib;GenericCodeGen.lib;GenericCodeGend.lib;glslang-default-resource-limits.lib;glslang-default-resource-limitsd.lib;glslang.lib;glslangd.lib;MachineIndependent.lib;MachineIndependentd.lib;OSDependent.lib;OSDependentd.lib;SDL2-static.lib;SDL2-staticd.lib;SDL2.lib;SDL2d.lib;SDL2main.lib;SDL2maind.lib;SDL2_test.lib;SDL2_testd.lib;shaderc.lib;shadercd.lib;shaderc_combined.lib;shaderc_combinedd.lib;shaderc_shared.lib;shaderc_sharedd.lib;shaderc_util.lib;shaderc_utild.lib;spirv-cross-c-shared.lib;spirv-cross-c-sharedd.lib;spirv-cross-c.lib;spirv-cross-cd.lib;spirv-cross-core.lib;spirv-cross-cored.lib;spirv-cross-cpp.lib;spirv-cross-cppd.lib;spirv-cross-glsl.lib;spirv-cross-glsld.lib;spirv-cross-hlsl.lib;spirv-cross-hlsld.lib;spirv-cross-msl.lib;spirv-cross-msld.lib;spirv-cross-reflect.lib;spirv-cross-reflectd.lib;spirv-cross-util.lib;spirv-cross-utild.lib;SPIRV-Tools-diff.lib;SPIRV-Tools-diffd.lib;SPIRV-Tools-link.lib;SPIRV-Tools-linkd.lib;SPIRV-Tools-lint.lib;SPIRV-Tools-lintd.lib;SPIRV-Tools-opt.lib;SPIRV-Tools-optd.lib;SPIRV-Tools-reduce.lib;SPIRV-Tools-reduced.lib;SPIRV-Tools-shared.lib;SPIRV-Tools-sharedd.lib;SPIRV-Tools.lib;SPIRV-Toolsd.lib;SPIRV.lib;SPIRVd.lib;SPVRemapper.lib;SPVRemapperd.lib;vulkan-1.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>TerraVulkan\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>.\Library\lib;C:\VulkanSDK\Lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3d.lib;%(AdditionalDependencies);opengl32.lib;dxcompiler.lib;dxcompilerd.lib;GenericCodeGen.lib;GenericCodeGend.lib;glslang-default-resource-limits.lib;glslang-default-resource-limitsd.lib;glslang.lib;glslangd.lib;MachineIndependent.lib;MachineIndependentd.lib;OSDependent.lib;OSDependentd.lib;SDL2-static.lib;SDL2-staticd.lib;SDL2.lib;SDL2d.lib;SDL2main.lib;SDL2maind.lib;SDL2_test.lib;SDL2_testd.lib;shaderc.lib;shadercd.lib;shaderc_combined.lib;shaderc_combinedd.lib;shaderc_shared.lib;shaderc_sharedd.lib;shaderc_util.lib;shaderc_utild.lib;spirv-cross-c-shared.lib;spirv-cross-c-sharedd.lib;spirv-cross-c.lib;spirv-cross-cd.lib;spirv-cross-core.lib;spirv-cross-cored.lib;spirv-cross-cpp.lib;spirv-cross-cppd.lib;spirv-cross-glsl.lib;spirv-cross-glsld.lib;spirv-cross-hlsl.lib;spirv-cross-hlsld.lib;spirv-cross-msl.lib;spirv-cross-msld.lib;spirv-cross-reflect.lib;spirv-cross-reflectd.lib;spirv-cross-util.lib;spirv-cross-utild.lib;SPIRV-Tools-diff.lib;SPIRV-Tools-diffd.lib;SPIRV-Tools-link.lib;SPIRV-Tools-linkd.lib;SPIRV-Tools-lint.lib;SPIRV-Tools-lintd.lib;SPIRV-Tools-opt.lib;SPIRV-Tools-optd.lib;SPIRV-Tools-reduce.lib;SPIRV-Tools-reduced.lib;SPIRV-Tools-shared.lib;SPIRV-Tools-sharedd.lib;SPIRV-Tools.lib;SPIRV-Toolsd.lib;SPIRV.lib;SPIRVd.lib;SPVRemapper.lib;SPVRemapperd.lib;vulkan-1.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>TerraVulkan\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>.\Library\lib;C:\VulkanSDK\Lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);glfw3.lib;opengl32.lib;dxcompiler.lib;dxcompilerd.lib;GenericCodeGen.lib;GenericCodeGend.lib;glslang-default-resource-limits.lib;glslang-default-resource-limitsd.lib;glslang.lib;glslangd.lib;MachineIndependent.lib;MachineIndependentd.lib;OSDependent.lib;OSDependentd.lib;SDL2-static.lib;SDL2-staticd.lib;SDL2.lib;SDL2d.lib;SDL2main.lib;SDL2maind.lib;SDL2_test.lib;SDL2_testd.lib;shaderc.lib;shadercd.lib;shaderc_combined.lib;shaderc_combinedd.lib;shaderc_shared.lib;shaderc_sharedd.lib;shaderc_util.lib;shaderc_utild.lib;spirv-cross-c-shared.lib;spirv-cross-c-sharedd.lib;spirv-cross-c.lib;spirv-cross-cd.lib;spirv-cross-core.lib;spirv-cross-cored.lib;spirv-cross-cpp.lib;spirv-cross-cppd.lib;spirv-cross-glsl.lib;spirv-cross-glsld.lib;spirv-cross-hlsl.lib;spirv-cross-hlsld.lib;spirv-cross-msl.lib;spirv-cross-msld.lib;spirv-cross-reflect.lib;spirv-cross-reflectd.lib;spirv-cross-util.lib;spirv-cross-utild.lib;SPIRV-Tools-diff.lib;SPIRV-Tools-diffd.lib;SPIRV-Tools-link.lib;SPIRV-Tools-linkd.lib;SPIRV-Tools-lint.lib;SPIRV-Tools-lintd.lib;SPIRV-Tools-opt.lib;SPIRV-Tools-optd.lib;SPIRV-Tools-reduce.lib;SPIRV-Tools-reduced.lib;SPIRV-Tools-shared.lib;SPIRV-Tools-sharedd.lib;SPIRV-Tools.lib;SPIRV-Toolsd.lib;SPIRV.lib;SPIRVd.lib;SPVRemapper.lib;SPVRemapperd.lib;vulkan-1.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="glad.c" />
+    <ClCompile Include="TerraVulkan\TerraVulkan.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TerraVulkan\include\core\Logger.hpp" />
+    <ClInclude Include="TerraVulkan\include\core\VulkanManager.hpp" />
+    <ClInclude Include="TerraVulkan\include\core\Window.hpp" />
+    <ClInclude Include="TerraVulkan\include\render\Mesh.hpp" />
+    <ClInclude Include="TerraVulkan\include\render\Vertex.hpp" />
+    <ClInclude Include="TerraVulkan\include\thread\ThreadTaskExecutor.hpp" />
+    <ClInclude Include="TerraVulkan\include\util\ANSIFormatter.hpp" />
+    <ClInclude Include="TerraVulkan\include\util\GL.hpp" />
+    <ClInclude Include="TerraVulkan\include\util\MeshHelper.hpp" />
+    <ClInclude Include="TerraVulkan\include\util\VulkanHelper.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
