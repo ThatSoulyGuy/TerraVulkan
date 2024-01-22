@@ -17,6 +17,7 @@ namespace MeshHelper
         }
 
         Logger_ThrowError("VK_FAILURE", "Failed to find suitable memory type!", true);
+        return 0;
     }
 
     void GenerateBuffer(VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties, VkBuffer& buffer, VkDeviceMemory& bufferMemory)

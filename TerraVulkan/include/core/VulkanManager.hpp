@@ -30,10 +30,10 @@ namespace VulkanManager
     std::vector<VkSemaphore> imageAvailableSemaphores;
     std::vector<VkSemaphore> renderFinishedSemaphores;
     std::vector<VkFence> inFlightFences;
-    std::queue<std::function<void()>> renderFunctions;
+    std::queue<std::function<void(VkCommandBuffer)>> renderFunctions;
     size_t currentFrame = 0;
 
-    void RequestRenderCall(std::function<void()> function)
+    void RequestRenderCall(std::function<void(VkCommandBuffer)> function)
 	{
 		renderFunctions.push(function);
 	}
@@ -337,7 +337,7 @@ namespace VulkanManager
 
             while (!renderFunctions.empty())
             {
-				renderFunctions.front()();
+				renderFunctions.front()(commandBuffers[i]);
 				renderFunctions.pop();
 			}
 
@@ -396,7 +396,7 @@ namespace VulkanManager
         CreateCommandBuffers();
     }
 
-    void Initialize()
+    void PreInitialize()
     {
         WINDOW_SIZE_CALLBACK
 
@@ -476,11 +476,14 @@ namespace VulkanManager
         CreateFramebuffers();
 
         CreateCommandPool();
-
-        CreateCommandBuffers();
-
-        CreateSyncObjects();
     }
+
+    void PostInitialize()
+    {
+		CreateCommandBuffers();
+
+		CreateSyncObjects();
+	}
 
     void Render() 
     {

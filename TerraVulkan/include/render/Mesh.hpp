@@ -1,6 +1,7 @@
 #ifndef MESH_HPP
 #define MESH_HPP
 
+#include "render/ShaderManager.hpp"
 #include "render/Vertex.hpp"
 #include "util/MeshHelper.hpp"
 
@@ -35,6 +36,16 @@ public:
 		this->indices = indices;
 	}
 
+    void Render(VkCommandBuffer& commandBuffer)
+    {
+        VkBuffer vertexBuffers[] = { vertexBuffer };
+        VkDeviceSize offsets[] = { 0 };
+
+        vkCmdBindVertexBuffers(commandBuffer, 0, 1, vertexBuffers, offsets);
+        vkCmdBindIndexBuffer(commandBuffer, indexBuffer, 0, VK_INDEX_TYPE_UINT32);
+        vkCmdDrawIndexed(commandBuffer, static_cast<uint32_t>(indices.size()), 1, 0, 0, 0);
+    }
+
     void CleanUp()
     {
         vkDestroyBuffer(VulkanManager::device, vertexBuffer, nullptr);
@@ -43,18 +54,20 @@ public:
         vkFreeMemory(VulkanManager::device, indexBufferMemory, nullptr);
     }
 
-	static Mesh Register(const std::string& name, const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices)
+	static Mesh Register(const std::string& name, const std::vector<Vertex>& vertices, const std::vector<unsigned int>& indices, const std::string& shader)
 	{
 		Mesh mesh = {};
 
 		mesh.name = name;
 		mesh.vertices = vertices;
 		mesh.indices = indices;
+		mesh.shader = ShaderManager::Get(shader);
 
 		return mesh;
 	}
 	
 	std::string	name;
+    Shader shader;
 	std::vector<Vertex> vertices;
 	std::vector<uint32_t> indices;
 

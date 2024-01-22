@@ -53,5 +53,21 @@
     <ClInclude Include="TerraVulkan\include\util\MeshHelper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TerraVulkan\include\render\Shader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TerraVulkan\include\core\Settings.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TerraVulkan\include\render\ShaderManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TerraVulkan\include\core\PipelineManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\terravulkan\shaders\defaultFragment.frag" />
+    <None Include="assets\terravulkan\shaders\defaultVertex.vert" />
   </ItemGroup>
 </Project>
